@@ -1,7 +1,7 @@
-export default function Main() {
+export default function Main({ title = 'NextJS Basic Boilerplate' }) {
   return (
     <div>
-      <h1>NextJS Basic Boilerplate</h1>
+      <h1>{title}</h1>
     </div>
   );
 }

@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
     jest: true,
-    node: true,
+    node: true
   },
   settings: {
     "react": {
@@ -13,53 +13,34 @@ module.exports = {
       "typescript": {}
     }
   },
-  extends: [
-    'plugin:react/recommended',
-    'airbnb',
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
-  ],
+  extends: ["plugin:react/recommended", "airbnb", "plugin:@typescript-eslint/recommended", "plugin:prettier/recommended", "plugin:storybook/recommended"],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
-      jsx: true,
+      jsx: true
     },
     ecmaVersion: 'latest',
-    sourceType: 'module',
+    sourceType: 'module'
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    "react-hooks",
-    "prettier"
-  ],
+  plugins: ['react', '@typescript-eslint', "react-hooks", "prettier"],
   rules: {
     "prettier/prettier": "error",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
-    "react/jsx-filename-extension": [
-      1,
-      {
-        "extensions": [
-          ".tsx"
-        ]
-      }
-    ],
+    "react/jsx-filename-extension": [1, {
+      "extensions": [".tsx"]
+    }],
     "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": [
-      "error"
-    ],
+    "@typescript-eslint/no-use-before-define": ["error"],
     "@typescript-eslint/explicit-module-boundary-types": "off",
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "ts": "never",
-        "tsx": "never"
-      }
-    ],
-    "import/no-extraneous-dependencies": "off"
-  },
+    "import/extensions": ["error", "ignorePackages", {
+      "ts": "never",
+      "tsx": "never"
+    }],
+    "import/no-extraneous-dependencies": "off",
+    "react/function-component-definition": "off",
+    "react/jsx-props-no-spreading": "off"
+  }
 };
