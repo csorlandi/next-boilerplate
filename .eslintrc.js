@@ -2,6 +2,8 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
+    node: true,
   },
   settings: {
     "react": {
@@ -57,6 +59,7 @@ module.exports = {
         "ts": "never",
         "tsx": "never"
       }
-    ]
+    ],
+    "import/no-extraneous-dependencies": "off"
   },
 };
