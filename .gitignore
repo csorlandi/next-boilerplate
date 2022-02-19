@@ -37,3 +37,10 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# sw stuff
+public/sw.js
+public/workbox-*.js
+
+# storybook
+storybook-static
