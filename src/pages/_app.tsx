@@ -1,6 +1,8 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 
+import GlobalStyle from '../styles/global';
+
 function App({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -96,6 +98,7 @@ function App({ Component, pageProps }: AppProps) {
         <link rel='apple-touch-startup-image' href='/images/apple_splash_640.png' sizes='640x1136' />
         --> */}
       </Head>
+      <GlobalStyle />
       <Component {...pageProps} />
     </>
   );
