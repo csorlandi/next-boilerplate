@@ -1,10 +1,11 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from '../styles/Home.module.css';
+
+import * as S from '../styles/home/styles';
 
 function Home() {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>NextJS Boilerplate</title>
         <meta
@@ -14,38 +15,34 @@ function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
+      <S.Main>
+        <S.Title>
           Welcome to{' '}
           <a href="https://github.com/csorlandi/next-boilerplate">
             Next Boilerplate!
           </a>
-        </h1>
+        </S.Title>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>src/pages/index.tsx</code>
-        </p>
+        <S.Description>
+          Get started by editing <code>src/pages/index.tsx</code>
+        </S.Description>
 
-        <div className={styles.grid}>
-          <a
-            href="https://github.com/csorlandi/next-boilerplate"
-            className={styles.card}
-          >
+        <S.Grid>
+          <S.Card href="https://github.com/csorlandi/next-boilerplate">
             <h2>Documentation &rarr;</h2>
             <p>Find in-depth information about this NextJS Boilerplate.</p>
-          </a>
-        </div>
-      </main>
+          </S.Card>
+        </S.Grid>
+      </S.Main>
 
-      <footer className={styles.footer}>
+      <S.Footer>
         <a
           href="https://csorlandi.dev"
           target="_blank"
           rel="noopener noreferrer"
         >
           Powered by{' '}
-          <span className={styles.logo}>
+          <span>
             <Image
               src="/csorlandi.png"
               alt="CsOrlandi Logo"
@@ -54,8 +51,8 @@ function Home() {
             />
           </span>
         </a>
-      </footer>
-    </div>
+      </S.Footer>
+    </>
   );
 }
 

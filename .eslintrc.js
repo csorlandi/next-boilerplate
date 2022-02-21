@@ -41,6 +41,7 @@ module.exports = {
     }],
     "import/no-extraneous-dependencies": "off",
     "react/function-component-definition": "off",
+    "import/prefer-default-export": "off",
     "react/jsx-props-no-spreading": "off"
   }
 };
