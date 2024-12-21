@@ -94,7 +94,6 @@ const eslintConfig = [
       'react/jsx-props-no-spreading': 'off',
       'react/no-unused-prop-types': 'off',
       'react/require-default-props': 'off',
-
       'import/extensions': [
         'error',
         'ignorePackages',
@@ -105,7 +104,6 @@ const eslintConfig = [
           jsx: 'never',
         },
       ],
-
       'jsx-a11y/anchor-is-valid': [
         'error',
         {
