@@ -79,15 +79,39 @@ const eslintConfig = [
           '**/*.{ts,tsx}': 'KEBAB_CASE',
         },
         {
-          // ignore the middle extensions of the filename to support filename like bable.config.js or smoke.spec.ts
           ignoreMiddleExtensions: true,
         },
       ],
       'check-file/folder-naming-convention': [
         'error',
         {
-          // all folders within src (except __tests__)should be named in kebab-case
           'src/**': 'KEBAB_CASE',
+        },
+      ],
+      camelcase: 'off',
+      'import/prefer-default-export': 'off',
+      'react/jsx-filename-extension': 'off',
+      'react/jsx-props-no-spreading': 'off',
+      'react/no-unused-prop-types': 'off',
+      'react/require-default-props': 'off',
+
+      'import/extensions': [
+        'error',
+        'ignorePackages',
+        {
+          ts: 'never',
+          tsx: 'never',
+          js: 'never',
+          jsx: 'never',
+        },
+      ],
+
+      'jsx-a11y/anchor-is-valid': [
+        'error',
+        {
+          components: ['Link'],
+          specialLink: ['hrefLeft', 'hrefRight'],
+          aspects: ['invalidHref', 'preferButton'],
         },
       ],
     },

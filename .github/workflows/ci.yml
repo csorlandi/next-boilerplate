@@ -1,0 +1,44 @@
+name: Check PR
+
+on: [pull_request]
+
+jobs:
+  run-ci:
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    name: Run Type Check & Linters
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: enable corepack
+        run: corepack enable
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Check types
+        run: yarn type-check
+
+      - name: Check Prettier
+        run: yarn format:ci
+
+      - name: Check linting
+        run: yarn lint
+
+      - name: Check commits messages
+        uses: wagoid/commitlint-github-action@v6
