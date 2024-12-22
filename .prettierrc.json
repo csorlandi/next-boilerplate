@@ -9,7 +9,6 @@
   "arrowParens": "always",
   "trailingComma": "es5",
   "plugins": [
-    "prettier-plugin-tailwindcss",
     "@trivago/prettier-plugin-sort-imports"
   ],
   "importOrder": [

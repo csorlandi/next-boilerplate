@@ -1,8 +1,6 @@
 import { FlatCompat } from '@eslint/eslintrc';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
-import tailwind from 'eslint-plugin-tailwindcss';
 import { dirname } from 'path';
-import tseslint from 'typescript-eslint';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -114,8 +112,6 @@ const eslintConfig = [
       ],
     },
   }),
-  ...tseslint.configs.recommended,
-  ...tailwind.configs['flat/recommended'],
 ];
 
 export default eslintConfig;
