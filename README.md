@@ -34,7 +34,6 @@
 - 💖 Prettier — Code Formatter for consistent style
 - 🐶 Husky — For running scripts before committing
 - 🚓 Commitlint — To make sure your commit messages follow the convention
-- 🖌 Renovate — To keep your dependencies up to date
 - 🚫 lint-staged — Run ESLint and Prettier against staged Git files
 - 👷 PR Workflow — Run Type Check & Linters on Pull Requests
 - ⚙️ EditorConfig - Consistent coding styles across editors and IDEs
