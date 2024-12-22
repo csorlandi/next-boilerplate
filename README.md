@@ -1,36 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/26466516/141659551-d7ba5630-7200-46fe-863b-87818dae970a.png" alt="Next.js Starter">
+</p>
 
-## Getting Started
+<br />
 
-First, run the development server:
+<div align="center"><strong>TypeScript starter for Next.js</strong></div>
+<div align="center">All you need to build your next project.</div>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+<br />
+
+<div align="center">
+  <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&style=flat-square&color=0076FF&labelColor=000000" alt="PRs welcome!" />
+
+  <img alt="License" src="https://img.shields.io/github/license/csorlandi/next-template?style=flat-square&color=0076FF&labelColor=000000">
+
+  <a href="https://github.com/csorlandi">
+    <img src="https://img.shields.io/static/v1?label=Follow&message=@csorlandi&style=flat-square&color=0076FF&labelColor=000000" alt="Follow @csorlandi" />
+  </a>
+</div>
+
+<div align="center">
+  <sub>Created by <a href="https://linkedin.com/in/csorlandi">Claudio Orlandi</a>.</sub>
+</div>
+
+<br />
+
+## Features
+
+- ⚡️ Next.js 15 (App Router)
+- ⚛️ React 19
+- ⛑ TypeScript
+- 📏 ESLint 9 — To find and fix problems in your code
+- 💖 Prettier — Code Formatter for consistent style
+- 🐶 Husky — For running scripts before committing
+- 🚓 Commitlint — To make sure your commit messages follow the convention
+- 🖌 Renovate — To keep your dependencies up to date
+- 🚫 lint-staged — Run ESLint and Prettier against staged Git files
+- 👷 PR Workflow — Run Type Check & Linters on Pull Requests
+- ⚙️ EditorConfig - Consistent coding styles across editors and IDEs
+- 🗂 Path Mapping — Import components or images using the `@` prefix
+- 🔐 CSP — Content Security Policy for enhanced security (default minimal policy)
+- 🧳 T3 Env — Type-safe environment variables
+
+## Quick Start
+
+The best way to start with this template is using [Create Next App](https://nextjs.org/docs/api-reference/create-next-app).
+
+```
+# yarn
+yarn create next-app -e https://github.com/csorlandi/next-template
+# pnpm
+pnpm create next-app -e https://github.com/csorlandi/next-template
+# npm
+npx create-next-app -e https://github.com/csorlandi/next-template
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To start the project locally, run:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+yarn dev
+```
 
-## Learn More
+Open `http://localhost:3000` with your browser to see the result.
 
-To learn more about Next.js, take a look at the following resources:
+## Documentation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Requirements
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Node.js >= 20
+- yarn
 
-## Deploy on Vercel
+### Directory Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [`.github`](.github) — GitHub configuration including the CI workflow.<br>
+- [`.husky`](.husky) — Husky configuration and hooks.<br>
+- [`public`](./public) — Static assets such as robots.txt, images, and favicon.<br>
+- [`src`](./src) — Application source code, including pages, components, styles.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Scripts
+
+- `yarn dev` — Starts the application in development mode at `http://localhost:3000`.
+- `yarn build` — Creates an optimized production build of your application.
+- `yarn start` — Starts the application in production mode.
+- `yarn type-check` — Validate code using TypeScript compiler.
+- `yarn lint` — Runs ESLint for all files in the `src` directory.
+- `yarn lint:fix` — Runs ESLint fix for all files in the `src` directory.
+- `yarn format` — Runs Prettier for all files in the `src` directory.
+- `yarn format:check` — Check Prettier list of files that need to be formatted.
+- `yarn format:ci` — Prettier check for CI.
+
+### Path Mapping
+
+TypeScript are pre-configured with custom path mappings. To import components or files, use the `@` prefix.
+
+```tsx
+import { Button } from '@/components/Button';
+// To import images or other files from the public folder
+import avatar from '@/public/avatar.png';
+```
+
+### Environment Variables
+
+We use [T3 Env](https://env.t3.gg/) to manage environment variables. Create a `.env.local` file in the root of the project and add your environment variables there.
+
+When adding additional environment variables, the schema in `./src/lib/env/client.ts` or `./src/lib/env/server.ts` should be updated accordingly.
+
+### CSP (Content Security Policy)
+
+The Content Security Policy (CSP) is a security layer that helps to detect and mitigate certain types of attacks, including Cross-Site Scripting (XSS) and data injection attacks. The CSP is implemented in the `next.config.ts` file.
+
+It contains a default and minimal policy that you can customize to fit your application needs. It's a foundation to build upon.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for more information.

@@ -1,8 +1,9 @@
 {
-  "name": "next-boilerplate",
+  "name": "next-template",
   "description": "A TypeScript template for Next.js 15 that includes all you need to build your next project.",
   "version": "1.0.0",
   "author": "Claudio Orlandi (@csorlandi)",
+  "license": "MIT",
   "private": true,
   "keywords": [
     "nextjs",
