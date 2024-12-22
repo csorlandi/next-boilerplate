@@ -1,4 +1,5 @@
 import { createEnv } from '@t3-oss/env-nextjs';
+import { ZodError } from 'zod';
 
 export const env = createEnv({
   /**
@@ -7,11 +8,7 @@ export const env = createEnv({
    * `NEXT_PUBLIC_`.
    */
   client: {},
-
-  runtimeEnv: {
-    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY:
-      process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY,
-  },
+  runtimeEnv: {},
 
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
@@ -24,4 +21,13 @@ export const env = createEnv({
    * `SOME_VAR: z.string()` and `SOME_VAR=''` will throw an error.
    */
   emptyStringAsUndefined: true,
+
+  // Called when the schema validation fails.
+  onValidationError: (error: ZodError) => {
+    console.error(
+      '❌ Invalid environment variables:',
+      error.flatten().fieldErrors
+    );
+    process.exit(1);
+  },
 });

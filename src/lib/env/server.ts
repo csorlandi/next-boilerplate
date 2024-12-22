@@ -1,5 +1,5 @@
 import { createEnv } from '@t3-oss/env-nextjs';
-import { z } from 'zod';
+import { ZodError, z } from 'zod';
 
 export const env = createEnv({
   server: {
@@ -8,6 +8,7 @@ export const env = createEnv({
       .default('development'),
   },
 
+  // eslint-disable-next-line n/no-process-env
   experimental__runtimeEnv: process.env,
 
   /**
@@ -21,4 +22,13 @@ export const env = createEnv({
    * `SOME_VAR: z.string()` and `SOME_VAR=''` will throw an error.
    */
   emptyStringAsUndefined: true,
+
+  // Called when the schema validation fails.
+  onValidationError: (error: ZodError) => {
+    console.error(
+      '❌ Invalid environment variables:',
+      error.flatten().fieldErrors
+    );
+    process.exit(1);
+  },
 });

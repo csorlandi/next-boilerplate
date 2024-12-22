@@ -17,7 +17,7 @@ const eslintConfig = [
     'next',
     'prettier'
   ),
-  ...compat.plugins('check-file'),
+  ...compat.plugins('check-file', 'n'),
   eslintPluginPrettierRecommended,
   ...compat.config({
     rules: {
@@ -108,6 +108,12 @@ const eslintConfig = [
           components: ['Link'],
           specialLink: ['hrefLeft', 'hrefRight'],
           aspects: ['invalidHref', 'preferButton'],
+        },
+      ],
+      'n/no-process-env': [
+        'error',
+        {
+          allowedVariables: ['SKIP_ENV_VALIDATION'],
         },
       ],
     },
