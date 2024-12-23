@@ -12,7 +12,7 @@
 <div align="center">
   <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&style=flat-square&color=0076FF&labelColor=000000" alt="PRs welcome!" />
 
-  <img alt="License" src="https://img.shields.io/github/license/csorlandi/next-template?style=flat-square&color=0076FF&labelColor=000000">
+  <img alt="License" src="https://img.shields.io/github/license/csorlandi/nextjs-template?style=flat-square&color=0076FF&labelColor=000000">
 
   <a href="https://github.com/csorlandi">
     <img src="https://img.shields.io/static/v1?label=Follow&message=@csorlandi&style=flat-square&color=0076FF&labelColor=000000" alt="Follow @csorlandi" />
@@ -47,11 +47,11 @@ The best way to start with this template is using [Create Next App](https://next
 
 ```
 # yarn
-yarn create next-app -e https://github.com/csorlandi/next-template
+yarn create next-app -e https://github.com/csorlandi/nextjs-template
 # pnpm
-pnpm create next-app -e https://github.com/csorlandi/next-template
+pnpm create next-app -e https://github.com/csorlandi/nextjs-template
 # npm
-npx create-next-app -e https://github.com/csorlandi/next-template
+npx create-next-app -e https://github.com/csorlandi/nextjs-template
 ```
 
 ### Development
